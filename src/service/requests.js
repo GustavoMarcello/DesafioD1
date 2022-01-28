@@ -32,9 +32,9 @@ class GetMovie {
         }
     }
 
-    async getUpcomming (){
+    async getUpcoming (){
         try {
-            const { data } = await this.client.get("movie/upcomming?api_key=" + this.token)
+            const { data } = await this.client.get("movie/upcoming?api_key=" + this.token)
             const resultUpcomming = data?.results?.map((x) => {
                 return {
                     id: x.id,

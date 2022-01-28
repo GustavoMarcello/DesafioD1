@@ -42,7 +42,7 @@ app.use(function(err, req, res, next) {
 
 // getMovie.getMovieById()
 // getMovie.getPopular()
-// getMovie.getUpcomming()
+// getMovie.getUpcoming()
 // getMovie.getTopRated()
 
 // module.exports = app;
