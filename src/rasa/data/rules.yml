@@ -1,0 +1,52 @@
+version: "2.0"
+
+rules:
+- rule: fallback
+  steps:
+    - or:
+        - intent: fallback
+        - intent: nlu_fallback
+    - action: utter_fallback
+
+- rule: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  
+- rule: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: form search
+  steps:
+  - intent: search_movie
+  - action: utter_search_movie
+  - action: inputUser_form_search
+  - active_loop: inputUser_form_search
+
+- rule: desliga form search
+  condition:
+    - active_loop: inputUser_form_search
+  steps:
+    - action: inputUser_form_search
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: action_restart
+
+# - rule: form random
+#   steps:
+#   - intent: random_movie
+#   - action: validate_inputUser_form_random
+#   - active_loop: validate_inputUser_form_random
+
+# - rule: desliga form search
+#   condition:
+#     - active_loop: validate_inputUser_form_random
+#   steps:
+#     - action: validate_inputUser_form_random
+#     - active_loop: null
+#     - slot_was_set:
+#         - requested_slot: null
+#     - action: action_restart

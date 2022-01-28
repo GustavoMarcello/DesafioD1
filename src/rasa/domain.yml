@@ -1,0 +1,65 @@
+version: "2.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - search_movie
+  - random_movie
+
+slots:
+  inputUser:
+    type: text
+    influence_conversation: false
+
+forms:
+  inputUser_form_search:
+    required_slots:
+        inputUser:
+        - type: from_text
+
+responses:
+  utter_greet:
+  - text: "Olá, em que posso ajudar? 😉📽🎞"
+    buttons:
+      - title: Buscar filme
+        payload: /search_movie
+      - title: Filme aleatório
+        payload: /random_movie
+
+  utter_search_movie:
+  - text: "Beleza, vou buscar pelo **título**, pode digitar! "
+
+  utter_goodbye:
+  - text: "Conte comigo sempre que precisar. Té+ 😁"
+
+  utter_fallback:
+  - text: |-
+      Desculpe não entendi o que você quiz dizer com isso 😕.
+      
+      Escolha uma das **opções** abaixo ou digite o que procura.
+    buttons:
+      - title: Buscar filme
+        payload: /search_movie
+      - title: Filme aleatório
+        payload: /random_movie
+
+  - text: |-
+      Eita o que você quiz dizer com isso?
+      
+      Escolha uma das **opções** abaixo ou digite o que procura.
+    buttons:
+      - title: Buscar filme
+        payload: /search_movie
+      - title: Filme aleatório
+        payload: /random_movie
+
+
+actions:
+- action_default_fallback
+- validate_inputUser_form_search
+- validate_inputUser_form_random
