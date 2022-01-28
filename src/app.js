@@ -41,7 +41,9 @@ app.use(function(err, req, res, next) {
 });
 
 // getMovie.getMovieById()
-getMovie.getPopularMovies()
+// getMovie.getPopular()
+// getMovie.getUpcomming()
+// getMovie.getTopRated()
 
 // module.exports = app;
 app.listen(3000);

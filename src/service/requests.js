@@ -10,16 +10,11 @@ class GetMovie {
         this.client = axios.create({ baseURL: url})
         this.token = token
     }
-    async getMovieById (){
-        const response = await this.client.get("movie/550?api_key=" + this.token)
-        console.log(response)
-        return response
-    }
 
-    async getPopularMovies (){
+    async getPopular (){
         try {
             const { data } = await this.client.get("movie/popular?api_key=" + this.token)
-            const result = data?.results?.map((x) => {
+            const resultPopular = data?.results?.map((x) => {
                 return {
                     id: x.id,
                     title: x.title,
@@ -30,7 +25,49 @@ class GetMovie {
             });
             // console.log(result)
 
-            return result || []
+            return resultPopular || []
+        } catch (err) {
+            console.error(err);
+            return [];
+        }
+    }
+
+    async getUpcomming (){
+        try {
+            const { data } = await this.client.get("movie/upcomming?api_key=" + this.token)
+            const resultUpcomming = data?.results?.map((x) => {
+                return {
+                    id: x.id,
+                    title: x.title,
+                    release_date: x.release_date,
+                    poster_path: x.poster_path,
+                    overview: x.overview
+                };
+            });
+            // console.log(result)
+
+            return resultUpcomming || []
+        } catch (err) {
+            console.error(err);
+            return [];
+        }
+    }
+
+    async getTopRated (){
+        try {
+            const { data } = await this.client.get("movie/top_rated?api_key=" + this.token)
+            const resultTopRated = data?.results?.map((x) => {
+                return {
+                    id: x.id,
+                    title: x.title,
+                    release_date: x.release_date,
+                    poster_path: x.poster_path,
+                    overview: x.overview
+                };
+            });
+            // console.log(result)
+
+            return resultTopRated || []
         } catch (err) {
             console.error(err);
             return [];
