@@ -11,6 +11,8 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # rasa
 models
+.vscode
+__pycache__
 
 # Runtime data
 pids

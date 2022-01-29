@@ -21,5 +21,4 @@ class ActionDefaultFallback(Action):
             domain: Dict[Text, Any],
             ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(response='utter_fallback')
         return [UserUtteranceReverted()]

@@ -1,15 +1,30 @@
 version: "2.0"
 
 stories:
-- story: formulário de pesquisa
+- story: fallback
   steps:
-  - intent: search_movie
-  - action: utter_search_movie
-  - action: inputUser_form_search
-  - active_loop: inputUser_form_search
-  - slot_was_set:
-    - requested_slot: inputUser
-  - slot_was_set:
-    - inputUser: inputUser
-  - active_loop: null
-  - action: action_restart
+    - intent: nlu_fallback
+    - action: action_carousels
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+# - story: formulário de pesquisa
+#   steps:
+#   - intent: search_movie
+#   - action: utter_search_movie
+#   - action: inputUser_form_search
+#   - active_loop: inputUser_form_search
+#   - slot_was_set:
+#     - requested_slot: inputUser
+#   - slot_was_set:
+#     - inputUser: inputUser
+#   - active_loop: null
+#   - action: action_restart

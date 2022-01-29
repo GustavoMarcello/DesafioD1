@@ -6,60 +6,27 @@ session_config:
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - search_movie
-  - random_movie
+  - ver_mais
+
+entities:
+- ver_mais_entity
 
 slots:
-  inputUser:
+  movie_title:
     type: text
+    initial_value: ''
     influence_conversation: false
-
-forms:
-  inputUser_form_search:
-    required_slots:
-        inputUser:
-        - type: from_text
 
 responses:
   utter_greet:
-  - text: "Olá, em que posso ajudar? 😉📽🎞"
-    buttons:
-      - title: Buscar filme
-        payload: /search_movie
-      - title: Filme aleatório
-        payload: /random_movie
-
-  utter_search_movie:
-  - text: "Beleza, vou buscar pelo **título**, pode digitar! "
+  - text: "Olá, digite sua busca de filmes 😉"
 
   utter_goodbye:
   - text: "Conte comigo sempre que precisar. Té+ 😁"
 
-  utter_fallback:
-  - text: |-
-      Desculpe não entendi o que você quiz dizer com isso 😕.
-      
-      Escolha uma das **opções** abaixo ou digite o que procura.
-    buttons:
-      - title: Buscar filme
-        payload: /search_movie
-      - title: Filme aleatório
-        payload: /random_movie
-
-  - text: |-
-      Eita o que você quiz dizer com isso?
-      
-      Escolha uma das **opções** abaixo ou digite o que procura.
-    buttons:
-      - title: Buscar filme
-        payload: /search_movie
-      - title: Filme aleatório
-        payload: /random_movie
-
 
 actions:
+- action_carousels
 - action_default_fallback
 - validate_inputUser_form_search
-- validate_inputUser_form_random
+- action_ver_mais
