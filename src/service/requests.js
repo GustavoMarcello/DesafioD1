@@ -1,4 +1,6 @@
 const axios = require ("axios").default
+require('dotenv').config()
+const TMDB_KEY = process.env.TMDB_KEY
 
 class GetMovie {
     /**
@@ -8,7 +10,6 @@ class GetMovie {
 
     constructor({url, token}){
         this.client = axios.create({ baseURL: url})
-        this.token = token
     }
 
     /**
@@ -17,7 +18,7 @@ class GetMovie {
      */
     async getPopular (){
         try {
-            const { data } = await this.client.get("movie/popular?api_key=" + this.token)
+            const { data } = await this.client.get("movie/popular?api_key=" + TMDB_KEY)
             const resultPopular = data.results.map((x) => {
                 return {
                     id: x.id,
@@ -37,7 +38,7 @@ class GetMovie {
 
     async getUpcoming (){
         try {
-            const { data } = await this.client.get("movie/upcoming?api_key=" + this.token)
+            const { data } = await this.client.get("movie/upcoming?api_key=" + TMDB_KEY)
             const resultUpcomming = data.results.map((x) => {
                 return {
                     id: x.id,
@@ -58,7 +59,7 @@ class GetMovie {
 
     async getTopRated (){
         try {
-            const { data } = await this.client.get("movie/top_rated?api_key=" + this.token)
+            const { data } = await this.client.get("movie/top_rated?api_key=" + TMDB_KEY)
             const resultTopRated = data.results.map((x) => {
                 return {
                     id: x.id,
