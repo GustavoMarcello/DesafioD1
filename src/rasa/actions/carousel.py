@@ -43,16 +43,23 @@ class ActionCarousel(Action):
         for i in range(total_results) if total_results < 10 else range(10):
             movie_id = str(json['results'][i]['id'])
             title = json['results'][i]['title']
-            poster_img = json['results'][i]['poster_path']
-            release_date = json['results'][i]['release_date']
+            
+            try:
+              release_date = json['results'][i]['release_date']
+              lancamento = "Desconhecido" if release_date == "" else release_date[:4]
+            except:
+                lancamento = "Desconhecido"
             
             #verificando data de lançamento
-            lancamento = "Desconhecido" if release_date == "" else release_date[:4]
             
             # verificando se tem poster
-            if poster_img == None:
-                imagem = 'http://seeg.eco.br/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'
-            else:
+            try:
+              poster_img = json['results'][i]['poster_path']
+              if poster_img == None:
+                  imagem = 'http://seeg.eco.br/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png'
+              else:
+                  imagem = "https://www.themoviedb.org/t/p/original" + poster_img
+            except:
                 imagem = "https://www.themoviedb.org/t/p/original" + poster_img
                 
             #verificando titulo

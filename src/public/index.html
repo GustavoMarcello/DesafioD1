@@ -13,19 +13,11 @@
     integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <!-- responsividade -->
     <link rel="stylesheet" href="stylesheets/responsive.css">
-    <!-- owl css -->
-    <link rel="stylesheet" href="stylesheets/chatbot.css">
     <script src="https://unpkg.com/axios@0.21.4/dist/axios.min.js"></script>
     
-    
-    
-    <!-- scripts owl carrossel -->
-    
 </head>
-<h1 class="logo">Notflix</h1>
 
 <body>
-    
     <header>
         <div class="container-principal">
             <h2 class="logo">MooVIE</h2>
@@ -42,8 +34,9 @@
         </div>
     </main>
 
-    
+    <!-- carousel 0 -->
     <div class="container">
+        <p class="carousel-title">Populares</p>
         <button type="button" id="moveLeft" class="btn-nav">
           ᐊ
         </button>
@@ -84,7 +77,9 @@
         </button>
       </div>
 
+      <!-- carousel 1 -->
       <div class="container">
+          <p class="carousel-title">Lançamentos</p>
         <button type="button" id="moveLeft" class="btn-nav">
           ᐊ
         </button>
@@ -123,20 +118,58 @@
         <button type="button" id="moveRight" class="btn-nav">
           ᐅ
         </button>
-      </div>
+      </div>      
 
-
-
+      <!-- carousel 2 -->
+      <div class="container">
+        <p class="carousel-title">Top Avaliados</p>
+        <button type="button" id="moveLeft" class="btn-nav">
+          ᐊ
+        </button>
+        <div class="container-indicators">
+          <div class="indicator active" data-index=0></div>
+          <div class="indicator" data-index=1></div>
+          <div class="indicator" data-index=2></div>
+        </div>
+        <div class="slider2" id="mySlider">
+          <div class="movie" id="movie2">
+            <img
+              src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="" srcset="">
+            <div class="description">
+              <div class="description__buttons-container">
+                <div class="description__button"><i class="fas fa-play"></i></div>
+                <div class="description__button"><i class="fas fa-plus"></i></div>
+                <div class="description__button"><i class="fas fa-thumbs-up"></i></div>
+                <div class="description__button"><i class="fas fa-thumbs-down"></i></div>
+                <div class="description__button"><i class="fas fa-chevron-down"></i></div>
+              </div>
+              <div class="description__text-container">
+                <span class="description__match">97% Match</span>
+                <span class="description__rating">TV-14</span>
+                <span class="description__length">2h 11m</span>
+                <br><br>
+                <span>Explosive</span>
+                <span>&middot;</span>
+                <span>Exciting</span>
+                <span>&middot;</span>
+                <span>Family</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="moveRight" class="btn-nav">
+          ᐅ
+        </button>
+      </div>      
       
-      
-      <script src="javascripts/main.js"></script>
-    
+    <script src="javascripts/main.js"></script>
     <script src="javascripts/owl/jquery.min.js"></script>
     <script src="javascripts/owl/owl.carousel.min.js"></script>
     <script src="javascripts/setup.js"></script>
     <!-- chatbot -->
     <script src="javascripts/chatbot.js"></script>
-    
+    <link rel="stylesheet" href="stylesheets/chatbot.css">
 </body>
 
 </html>

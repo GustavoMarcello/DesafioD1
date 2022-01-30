@@ -10,6 +10,30 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+
+- story: ver_mais
+  steps:
+  - action: action_carosels
+  - intent: ver_mais
+  - action: action_ver_mais
+
+- story: ver_mais
+  steps:
+  - action: action_ver_mais
+  - intent: ver_mais
+  - action: action_carosels
+
+- story: greet, ver_mais
+  steps:
+  - action: utter_greet
+  - intent: ver_mais
+  - action: action_carosels
+
+- story: goodbye, ver_mais
+  steps:
+  - action: utter_goodbye
+  - intent: ver_mais
+  - action: action_carosels
   
 - story: goodbye
   steps:

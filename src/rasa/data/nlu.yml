@@ -20,9 +20,8 @@ nlu:
 - intent: ver_mais
   examples: |
     - [ver mais](ver_mais_entity)
-    - [mais detalhes](ver_mais_entity)
     - [mais detalhes:](ver_mais_entity)
-    - [mais detalhes sinopse](ver_mais_entity)
+
 
 
 

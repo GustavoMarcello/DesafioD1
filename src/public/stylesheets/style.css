@@ -98,7 +98,7 @@ header nav a:hover{
     margin-top: 5px;
 }
 
-.carosel-title{
+.carousel-title{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
     color: rgb(233, 233, 233);
@@ -107,8 +107,6 @@ header nav a:hover{
     margin-top: 10px;
 }
 
-
-/* NEGOCIO QUE FUNCIOONA */
 /*
 *
 * Boiler Plate stuff 
@@ -116,7 +114,7 @@ header nav a:hover{
 *********************************/
 :root {
   --movie-width: 15.5vw;
-  --movie-height: 200px;
+  --movie-height: 300px;
   --arrow-width: 50px;
   --slider-py: 200px;
 }
@@ -133,6 +131,7 @@ body {
 
 .container {
   position: relative;
+  background-color: #141414;
 }
 
 .logo {
@@ -152,7 +151,7 @@ body {
   overflow-y: visible;
   white-space: nowrap;
   position: relative;
-  padding-top: var(--slider-py);
+  padding-top: 50px;
   padding-bottom: var(--slider-py);
 }
 
@@ -162,7 +161,17 @@ body {
     overflow-y: visible;
     white-space: nowrap;
     position: relative;
-    padding-top: var(--slider-py);
+    padding-top: 50px;
+    padding-bottom: var(--slider-py);
+  }
+
+.slider2 {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: visible;
+    white-space: nowrap;
+    position: relative;
+    padding-top: 50px;
     padding-bottom: var(--slider-py);
   }
 
