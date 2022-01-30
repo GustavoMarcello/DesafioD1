@@ -6,6 +6,11 @@ from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.types import DomainDict
 from googletrans import Translator
 import requests
+import os
+from dotenv import load_dotenv
+
+TMDB_KEY = load_dotenv()
+TMDB_KEY = os.getenv('TMDB_KEY')
 
 
 class ActionVerMais(Action):
@@ -25,10 +30,9 @@ class ActionVerMais(Action):
         last_input = tracker.latest_message
         texto = last_input['text']
         id = texto[15:]
-        print('ACTION VER MAIS!!')
-        print(id)
+        print(f'movie id: {id}')
         
-        api_return = requests.get(f'https://api.themoviedb.org/3/movie/{id}?api_key=7ec6bf3c95374d2e583d92229608f0d9')
+        api_return = requests.get(f'https://api.themoviedb.org/3/movie/{id}?api_key={TMDB_KEY}')
         json = api_return.json()
         title = json['title']
         release_date = json['release_date']
@@ -48,7 +52,7 @@ class ActionVerMais(Action):
             imagem = "https://www.themoviedb.org/t/p/original" + poster_img
             
         #verificando data de lançamento
-        lancamento = "Desconhecido" if release_date == None else release_date[:4]
+        lancamento = "Desconhecido" if release_date == "" else release_date[:4]
         
         #verificando avaliacao
         avaliacao = "Desconhecido" if vote_average == None else vote_average

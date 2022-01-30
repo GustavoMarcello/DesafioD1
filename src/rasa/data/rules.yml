@@ -6,7 +6,7 @@ rules:
     - or:
         - intent: fallback
         - intent: nlu_fallback
-    - action: action_carousels
+    - action: action_carosels
 
 - rule: greet
   steps:
@@ -15,6 +15,7 @@ rules:
   
 - rule: ver_mais
   steps:
+  - action: action_carosels
   - intent: ver_mais
   - action: action_ver_mais
   
@@ -23,20 +24,4 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-# - rule: form search
-#   steps:
-#   - intent: search_movie
-#   - action: utter_search_movie
-#   - action: inputUser_form_search
-#   - active_loop: inputUser_form_search
-
-# - rule: desliga form search
-#   condition:
-#     - active_loop: inputUser_form_search
-#   steps:
-#     - action: inputUser_form_search
-#     - active_loop: null
-#     - slot_was_set:
-#         - requested_slot: null
-#     - action: action_restart
 

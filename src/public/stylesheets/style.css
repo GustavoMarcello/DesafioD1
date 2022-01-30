@@ -12,12 +12,18 @@ body{
     background: var(--preto);
     font-family: 'Times New Roman', Times, serif;
     color: #fff;
+
 }
 header .container{
     display: flex; /* deixa os componentes alinhados na tela */
     flex-direction: row; /* alinhados em linha */
     align-items: center; /* centralizados */
     justify-content: space-between;
+    position: fixed;
+    background-color: #141414;
+    width: 100%;
+    margin-left: 0%;
+    text-indent: 20%;
 }
 header .logo{
     color: var(--vermelho);
@@ -29,16 +35,18 @@ header nav a{
     text-decoration: none;
     color: #aaa;
     margin-right: 10px;
+    
 }
 /* quando passar o mouse em cima */
 header nav a:hover{
     color: #fff
+    
 }
 /* conteudo-principal */
 .conteudo-principal{
     font-size: 16px;
     /* cria um degradê no background*/
-    background: linear-gradient(rgba(0,0,0, .50), rgba(0,0,0, .50)100%), url('../img/BB1.jpg');
+    background: linear-gradient(rgba(0,0,0, .50), rgba(0,0,0, .50)100%), url('https://cdn.wallpapersafari.com/38/39/mebcYL.jpg');
     height: 400px;
     background-size: cover;
     display: flex;
@@ -88,4 +96,13 @@ header nav a:hover{
 }
 .conteudo-carrossel{
     margin-top: 5px;
+}
+
+.carosel-title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    color: rgb(233, 233, 233);
+    margin-left: 3ch;
+    height: 28px;
+    margin-top: 10px;
 }

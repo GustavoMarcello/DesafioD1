@@ -24,22 +24,5 @@ nlu:
     - [mais detalhes:](ver_mais_entity)
     - [mais detalhes sinopse](ver_mais_entity)
 
-# - intent: search_movie
-#   examples: |
-#     - Buscar filmes
-#     - Buscar
-#     - Encontrar filme
-#     - Manda um filme ae
-#     - Buscar por filmes
-#     - Encontrar filmes
-#     - Manda uns filmes ae
-
-# - intent: random_movie
-#   examples: |
-#     - Filme aleatório
-#     - qq um
-#     - não importa
-#     - vc q sabe
-#     - aleatório
 
 

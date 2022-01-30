@@ -21,12 +21,18 @@ responses:
   utter_greet:
   - text: "Olá, digite sua busca de filmes 😉"
 
+  - text: "Oi, digite um filme que procura 🧐"
+
   utter_goodbye:
   - text: "Conte comigo sempre que precisar. Té+ 😁"
 
+  - text: "Pode voltar sempre que quiser. 😄"
+
+  - text: "Até mais! Estarei aqui quando precisar 😎"
+
 
 actions:
-- action_carousels
+- action_carosels
 - action_default_fallback
 - validate_inputUser_form_search
 - action_ver_mais
