@@ -10,19 +10,16 @@ router.get('/', function(req, res, next) {
 /* GET popular movies. */
 router.get('/api/v1/popular_movies', async function(req, res) {
   res.send(await getMovie.getPopular())
-  
 });
 
 /* GET upcomming movies. */
 router.get('/api/v1/upcoming_movies', async function(req, res) {
   res.send(await getMovie.getUpcoming())
-  
 });
 
 /* GET top rated movies. */
 router.get('/api/v1/top_movies', async function(req, res) {
   res.send(await getMovie.getTopRated())
-  
 });
 
 module.exports = router;

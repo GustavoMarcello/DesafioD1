@@ -1,37 +1,32 @@
 const url = "http://localhost:3000/api/v1/popular_movies"
-
+const movies = []
 
 axios.get(url)
     .then(response =>{
         const data = response.data
+        console.log(data)
+        const dFrag = document.createDocumentFragment();
+        data.map(x => {
+            const div = document.createElement('div')
+            const moviePoster = document.createElement('img')
+            div.setAttribute('class', 'item')
+            moviePoster.setAttribute('class', 'box-conteudo')
+            moviePoster.setAttribute('alt', x.title)
+            moviePoster.setAttribute('src', x.poster_path)
+            div.appendChild(moviePoster)
+
+            dFrag.appendChild(div)
+             
+        })
+        window.onload = () => {
+            //write your code here
+            document.getElementById('carousel').appendChild(dFrag);
+        }  
+        // document.getElementById('carousel').appendChild(dFrag);
+        
+        
         // renderApiResult.textContent = JSON.stringify(data)
     })
     .catch(error => console.log(error))
 
 
-const filmes = [
-
-]
-
-const dFrag = document.createDocumentFragment();
-
-filmes.map(t => {
-    const div = document.createElement('div')
-    // const filmeName = document.createElement('span')
-    const p = document.createElement('img')
-    // p.textContent = t.img
-    // filmeName.textContent = t.nome
-    // filmeName.setAttribute('class', 'tooltiptext')
-    p.setAttribute('src', t.img)
-    p.setAttribute('alt', t.nome)
-    p.setAttribute('class', 'imagem')
-    div.setAttribute('class', 'nova div')
-    div.appendChild(p)
-    
-    dFrag.appendChild(div);
-})
-
-window.onload = () => {
-    //write your code here
-    document.getElementById('carousel').appendChild(dFrag);
-}
