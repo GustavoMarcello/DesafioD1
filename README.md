@@ -58,7 +58,7 @@ rasa run actions
 ```
 <img src="https://github.com/GustavoMarcello/DesafioD1/blob/main/src/img/terminal%20MooVIE.png"/>
 
-- Com os 3 servidores online, acesse `localhost/3000` em seu navegador para visualizar a página.
+- Com os 3 servidores online, acesse `localhost:3000` em seu navegador para visualizar a página.
 
 # 👨‍💻 ***Desenvolvedores***
 - [Caio Gabriel Ferreira](https://www.linkedin.com/in/caio-gferreira/)
