@@ -19,9 +19,10 @@
 - Axios": 0.25.0
 - Python: 3.8.8
 - Rasa: 2.8.22
+- Spacy: 3.1.2
 - Googletrans: 3.1.0a0
 - Dotenv: 14.3.2
-- Mongodb: 5.0.5
+- Mongodb: 4.3.1
 
 ## 🖥 Página Principal
 <img src="https://github.com/GustavoMarcello/DesafioD1/blob/main/src/img/MooVIE.png"/>
@@ -44,7 +45,10 @@ TMDB_KEY=XXXxXxXxxXxxxxXXxXXXXxx
 ```
 node index.js
 ```
-- Para utilização do bot, será necessário o treinamento do modelo e hospedagem dos demais servidores `rasa`.
+- Para utilização do bot, será necessário o treinamento do modelo e hospedagem dos demais servidores `rasa`. Faça o download da biblioteca em português do Spacy para o treinamento.
+```
+spacy download pt_core_news_lg
+```
 - **Acesse a pasta rasa**, e treine o chatbot.
 ```
 rasa train
