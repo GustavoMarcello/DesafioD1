@@ -5,7 +5,6 @@ nlu:
     - oi
     - eae
     - bom dia
-    - salve
     - olá
     
 - intent: goodbye
@@ -13,14 +12,21 @@ nlu:
     - tchau
     - xau
     - até mais
-    - adeus
-    - fui
     - obrigado
 
 - intent: ver_mais
   examples: |
     - [ver mais](ver_mais_entity)
     - [mais detalhes:](ver_mais_entity)
+    - quero ver mais
+    - quero detalhes
+
+- intent: fallback
+  examples: |
+    - matrix
+    - spider
+    - super
+    - aneis
 
 
 

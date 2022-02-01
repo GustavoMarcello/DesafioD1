@@ -25,7 +25,7 @@ pipeline:
     ranking_length: 5
     use_masked_language_model: True
   - name: FallbackClassifier
-    threshold: 0.95
+    threshold: 0.90
     ambiguity_threshold: 0.1
 
 # # See https://rasa.com/docs/rasa/policies for more information.

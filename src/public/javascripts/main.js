@@ -40,6 +40,7 @@ class CarouselMovies {
             const clone = newMovie.cloneNode(true);
             const img = clone.querySelector("img");
             img.src = image.poster_path;
+            img.alt = image.title
         
             slider.insertBefore(clone, slider.childNodes[slider.childNodes.length - 1]);
         });
@@ -50,7 +51,6 @@ const carouselMovies = new CarouselMovies()
 
 let activeIndex = 0; // the current page on the slider
 movies.map(x => {
-    
     axios.get(x.url)
         .then(response =>{
             const data = response.data
@@ -62,6 +62,7 @@ movies.map(x => {
         .catch(error => console.log(error))
 })
 
+// Scroll Left button
 movies.map(x => {
     x.btnLeft.addEventListener("click", (e) => {
         let movieWidth = document.querySelector(x.movieClass).getBoundingClientRect()

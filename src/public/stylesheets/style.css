@@ -35,7 +35,7 @@ body{
 background: var(--preto);
 color: #fff;
 background-color: #141414;
-overflow-x: hidden;
+/* overflow-x: hidden; */
 
 }
 
@@ -126,7 +126,7 @@ margin-top: 10px;
 *********************************/
 .slider1 {
 width: 100%;
-overflow-x: hidden;
+/* overflow-x: hidden; */
 overflow-y: hidden;
 white-space: nowrap;
 position: relative;
@@ -284,7 +284,7 @@ padding: 10px 0px;
 
 @media only screen and (min-width: 900px) {
 .movie0:hover {
-transform: scale(1.2);
+transform: scale(1.1);
 z-index: 2;
 }
 /* Make description visible when movie is hovered */
@@ -297,7 +297,7 @@ border-bottom-right-radius: 0;
 }
 
 .movie1:hover {
-transform: scale(1.2);
+transform: scale(1.1);
 z-index: 2;
 }
 /* Make description visible when movie is hovered */
@@ -310,7 +310,7 @@ border-bottom-right-radius: 0;
 }
 
 .movie2:hover {
-transform: scale(1.2);
+transform: scale(1.1);
 z-index: 2;
 }
 /* Make description visible when movie is hovered */
@@ -322,50 +322,6 @@ border-bottom-left-radius: 0;
 border-bottom-right-radius: 0;
 }
 }
-
-/* .description__buttons-container {
-display: flex;
-flex-direction: row;
-padding: 10px;
-}
-
-.description__text-container {
-padding: 10px;
-}
-
-.description__match {
-color: green;
-}
-
-.description__rating {
-outline: 1px solid white;
-padding: 0 3px;
-margin: 0 5px;
-}
-
-.description__button {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 20px;
-height: 20px;
-border: 2px solid white;
-text-align: center;
-font-size: 8px;
-margin-right: 5px;
-border-radius: 100%;
-}
-
-.description__button:hover {
-border-color: grey;
-color: grey;
-cursor: pointer;
-}
-
-.description__button:nth-of-type(5) {
-margin-left: auto;
-margin-right: 0;
-} */
 
 /*
 *
@@ -423,3 +379,7 @@ display: none;
 visibility: visible;
 }
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

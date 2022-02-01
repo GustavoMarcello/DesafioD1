@@ -1,41 +1,54 @@
 version: "2.0"
 
 stories:
-- story: fallback
-  steps:
-    - intent: nlu_fallback
-    - action: action_carosels
 
-- story: greet
+- story: happy path 1
+  steps:
+  - intent: nlu_fallback
+  - action: action_carosels
+  - intent: ver_mais
+  - action: action_ver_mais
+
+- story: happy path 2
+  steps:
+  - intent: fallback
+  - action: action_carosels
+  - intent: ver_mais
+  - action: action_ver_mais
+
+- story: happy path 3
   steps:
   - intent: greet
   - action: utter_greet
-
-- story: ver_mais
-  steps:
+  - intent: nlu_fallback
   - action: action_carosels
   - intent: ver_mais
   - action: action_ver_mais
 
-- story: ver_mais
+- story: happy path 4
   steps:
-  - action: action_ver_mais
-  - intent: ver_mais
-  - action: action_carosels
-
-- story: greet, ver_mais
-  steps:
+  - intent: greet
   - action: utter_greet
-  - intent: ver_mais
+  - intent: fallback
   - action: action_carosels
+  - intent: ver_mais
+  - action: action_ver_mais
 
-- story: goodbye, ver_mais
-  steps:
-  - action: utter_goodbye
-  - intent: ver_mais
-  - action: action_carosels
-  
-- story: goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+# - story: ver_mais
+#   steps:
+#   - action: action_ver_mais
+#   - intent: ver_mais
+#   - action: action_carosels
+
+# - story: greet, ver_mais
+#   steps:
+#   - action: utter_greet
+#   - intent: ver_mais
+#   - action: action_carosels
+
+# - story: goodbye, ver_mais
+#   steps:
+#   - action: utter_goodbye
+#   - intent: ver_mais
+#   - action: action_carosels
+
