@@ -13,8 +13,9 @@ class GetMovie {
 
     /**
      * 
-     * @returns {Array}
+     * @returns {{id: string, title: string, release_date: string, poster_path: string, overview: string} []}
      */
+    // requisição de filmes populares
     async getPopular (){
         try {
             const { data } = await this.client.get("movie/popular?api_key=" + this.key)
@@ -34,7 +35,11 @@ class GetMovie {
             return [];
         }
     }
-
+        /**
+     * 
+     * @returns {{id: string, title: string, release_date: string, poster_path: string, overview: string} []}
+     */
+    // requisição de lançamentos
     async getUpcoming (){
         try {
             const { data } = await this.client.get("movie/upcoming?api_key=" + this.key)
@@ -55,6 +60,11 @@ class GetMovie {
         }
     }
 
+    /**
+     * 
+     * @returns {{id: string, title: string, release_date: string, poster_path: string, overview: string} []}
+     */
+    // requisição de melhores avaliados
     async getTopRated (){
         try {
             const { data } = await this.client.get("movie/top_rated?api_key=" + this.key)
@@ -74,7 +84,6 @@ class GetMovie {
             return [];
         }
     }
-
 }
 
 module.exports = {

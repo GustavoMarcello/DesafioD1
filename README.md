@@ -20,6 +20,7 @@
 - Python: 3.8.8
 - Rasa: 2.8.22
 - Spacy: 3.1.2
+- Python-dotenv: 0.19.2
 - Googletrans: 3.1.0a0
 - Dotenv: 14.3.2
 - Mongodb: 4.3.1
@@ -36,6 +37,14 @@ O Chatbot disponível no canto inferior direito foi desenvolvido em Rasa, e auxi
 
 
 ## 📚 Como utilizar
+- A versão do python necessária para rodar esse projeto é a [3.8.8](https://www.python.org/downloads/release/python-388/). Verifique também a [versão do pip](https://pypi.org/project/pip/) mais atual, e se preciso, faça o upgrade com o comando abaixo.
+```
+pip install --upgrade pip
+```
+- Na raiz do projeto, execute o comando abaixo para realizar o download das bibliotecas python. 
+```
+pip install -r requirements.txt
+```
 - Crie um arquivo `.env` na raiz do seu projeto, e adicione sua chave da API do TMDb.
 ```
 TMDB_KEY=XXXxXxXxxXxxxxXXxXXXXxx

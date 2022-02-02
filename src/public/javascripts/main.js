@@ -1,20 +1,7 @@
-const slider0 = document.querySelector(".slider0");
-const slider1 = document.querySelector(".slider1");
-const slider2 = document.querySelector(".slider2");
-const indicator0 = document.querySelectorAll(".indicator");
-const indicator1 = document.querySelectorAll(".indicator1");
-const indicator2 = document.querySelectorAll(".indicator2");
-const btnLeft0 = document.getElementById("moveLeft0");
-const btnRight0 = document.getElementById("moveRight0");
-const btnLeft1 = document.getElementById("moveLeft1");
-const btnRight1 = document.getElementById("moveRight1");
-const btnLeft2 = document.getElementById("moveLeft2");
-const btnRight2 = document.getElementById("moveRight2");
-
 const movies = [
-    {url: 'http://localhost:3000/api/v1/popular_movies', slider: slider0, id: 'movie0', movieClass: '.movie0', indicator: indicator0, btnRight: btnRight0, btnLeft: btnLeft0},
-    {url: 'http://localhost:3000/api/v1/upcoming_movies', slider: slider1, id: 'movie1', movieClass: '.movie1', indicator: indicator1, btnRight: btnRight1, btnLeft: btnLeft1},
-    {url: 'http://localhost:3000/api/v1/top_movies', slider: slider2, id: 'movie2', movieClass: '.movie2', indicator: indicator2, btnRight: btnRight2, btnLeft: btnLeft2}
+    {url: 'http://localhost:3000/api/v1/popular_movies', slider: document.querySelector(".slider0"), id: 'movie0', movieClass: '.movie0', indicator: document.querySelectorAll(".indicator"), btnRight: document.getElementById("moveRight0"), btnLeft: document.getElementById("moveLeft0")},
+    {url: 'http://localhost:3000/api/v1/upcoming_movies', slider: document.querySelector(".slider1"), id: 'movie1', movieClass: '.movie1', indicator: document.querySelectorAll(".indicator1"), btnRight: document.getElementById("moveRight1"), btnLeft: document.getElementById("moveLeft1")},
+    {url: 'http://localhost:3000/api/v1/top_movies', slider: document.querySelector(".slider2"), id: 'movie2', movieClass: '.movie2', indicator: document.querySelectorAll(".indicator2"), btnRight: document.getElementById("moveRight2"), btnLeft: document.getElementById("moveLeft2")}
 ]
 // Update the indicators that show which page we're currently on
 function updateIndicators(index) {
@@ -32,6 +19,7 @@ class CarouselMovies {
      * 
      * @param {String} slider 
      * @param {String} id 
+     * @param {Object} data 
      */
     carouselSlider(slider, id, data) {
         data.forEach((image) => {
@@ -108,6 +96,5 @@ movies.map(x => {
         }
     });
 })
-
 
       

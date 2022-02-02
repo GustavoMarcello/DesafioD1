@@ -18,13 +18,8 @@
   "homepage": "https://github.com/GustavoMarcello/DesafioD1#readme",
   "dependencies": {
     "axios": "^0.25.0",
-    "cookie-parser": "^1.4.6",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "jade": "^1.11.0",
-    "mongodb": "^4.3.1",
-    "mongoose": "^6.1.8",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.15"
+    "mongodb": "^4.3.1"
   }
 }

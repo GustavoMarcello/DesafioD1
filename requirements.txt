@@ -1,0 +1,4 @@
+rasa==2.8.22
+spacy==3.1.2
+googletrans==3.1.0a0
+python-dotenv==0.19.2
