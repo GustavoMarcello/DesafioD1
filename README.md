@@ -23,7 +23,7 @@
 - Python-dotenv: 0.19.2
 - Googletrans: 3.1.0a0
 - Dotenv: 14.3.2
-- Mongodb: 4.3.1
+- Mongoose: 6.2.0
 
 ## 🖥 Página Principal
 <img src="https://github.com/GustavoMarcello/DesafioD1/blob/main/src/img/MooVIE.png"/>

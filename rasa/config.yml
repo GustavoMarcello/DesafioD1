@@ -1,7 +1,4 @@
-# https://rasa.com/docs/rasa/nlu/components/
 language: pt
-
-# # See https://rasa.com/docs/rasa/tuning-your-model for more information.
 pipeline:
   - name: "SpacyNLP"
     model: "pt_core_news_lg"
@@ -28,7 +25,6 @@ pipeline:
     threshold: 0.90
     ambiguity_threshold: 0.1
 
-# # See https://rasa.com/docs/rasa/policies for more information.
 policies:
   - name: MemoizationPolicy
   - name: TEDPolicy
